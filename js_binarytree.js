@@ -1,13 +1,5 @@
-const { ThreeSixtyOutlined } = require("@material-ui/icons");
-
 //binary tree data structure in javascript
-class Node{
-    constructor(data,left=null,right=null){
-        this.data=data;
-        this.left=left;
-        this.right=right;
-    }
-}
+const Node=require('./node')
 
 class BinarySearchTree{
     constructor(){
@@ -127,6 +119,22 @@ class BinarySearchTree{
     isBalanced(){
         return (this.findMinHeight()>=this.findMaxHeight()-1)
     }
+
+    reBalance(){
+        const inorderList=this.inOrder();
+        this.root=this.add(inorderList);
+    }
+
+    prettyPrint(node=this.root , prefix="",isLeft=true){
+        if (node.right){
+            this.prettyPrint(node.right, `${prefix}${isLeft ? '|   ':'    '}`,false)
+        }
+        console.log(`${prefix}${isLeft  ? '└── ' : '┌── '}${node.value}`);
+        if (node.left){
+            this.prettyPrint(node.left,`${prefix}${isleft ?'       ': '|    '}`,true)
+        }
+    }
+
     findMinHeight(node=this.root){
         if(node==null){
             return -1;
@@ -196,23 +204,6 @@ class BinarySearchTree{
 
 }
 
-const bst=new BinarySearchTree();
-bst.add(9);
-bst.add(4);
-bst.add(17);
-bst.add(3);
-bst.add(6);
-bst.add(22);
-bst.add(7);
-bst.add(20);
 
-console.log(bst.findMinHeight())
-console.log(bst.findMaxHeight())
-console.log(bst.isBalanced())
-bst.add(10)
-console.log(bst.findMaxHeight())
-console.log(bst.findMinHeight())
-console.log(bst.isBalanced())
-console.log('inorder: '+bst.inOrder())
-console.log('postorder: '+bst.postOrder())
-console.log('preorder: '+bst.preOrder())
+module.exports = BinarySearchTree
+
