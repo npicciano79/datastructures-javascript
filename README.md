@@ -17,5 +17,8 @@ js_linkedlist.js contains the class Node, which takes the elemement paramater, t
   <li>printList- adds current element to string and prints string</li>
   <li>removeLast- removes last element in linked list</li>
   
-    
  </ul>
+ 
+ <br><br>
+ <h2>Binary Tree Implementation</h2>
+ 
