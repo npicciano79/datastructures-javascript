@@ -21,4 +21,19 @@ js_linkedlist.js contains the class Node, which takes the elemement paramater, t
  
  <br><br>
  <h2>Binary Tree Implementation</h2>
+ Binary search tree implementation in JavaScript contains main driver file, scripts.js, which imports js_binarytree, assigns class BinaryTree to bst variable, then calls add, inorder, preorder, postorder functions and prints return. Node.js contains class constructor taking parameters node, left, right and initializing the values. js_binaryTree.js contains teh BinarySearchTree class which initializes the root value to null.  The binarySarchtree class contains the following functions: 
+ <br>
+<ul>
+  <li>add - adds node to left or right of tree</li>
+  <li>find min - find smallest value in tree</li>
+  <li>find max - finds largest value in tree</li>
+  <li>find- finds and returns node if it exists</li>
+  <li>isPresnet - returns true or false if value is presnet in tree</li>
+  <li>remove - removes value from tree</li>
+  <li>isBalanced - returns if tree is balanced</li>
+  <li>reBalance - calls inOrder traversal to balance tree</li>
+  <li>findMinHeight, findMaxHeight - finds min and max height of tree</li>
+  <li>inorder, preorder and postorder traversals</li>
+  
+ </ul>
  
